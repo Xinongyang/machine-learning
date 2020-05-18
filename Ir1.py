@@ -30,11 +30,9 @@ class Model(torch.nn.Module):
         
     def forward(self, x):
         #y_pred = torch.sigmoid(self.linear(x))
-        #y_pred = self.linear(x).sigmoid()
-        #return y_pred
-        x=F.relu(self.hidden(x))
-        x=self.predict(x)
-        return x
+        y_pred = self.linear(x).sigmoid()
+        return y_pred
+    
 # Our model    
 model = Model()
 
